@@ -1,0 +1,15 @@
+{% extends 'distancia/base.html' %}
+{% block content %}
+<div class="container">
+    <form method="get">
+        <input type="number" name="value">
+        <button type="submit">Adicionar</button>
+    </form>
+    {% for distancia in distancias %}
+    <ul class="list-group">
+        <li class="list-group-item">{{distancia.type}} = {{distancia.value}}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
+
