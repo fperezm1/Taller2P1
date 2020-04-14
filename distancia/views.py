@@ -1,13 +1,7 @@
 from rest_framework import viewsets
-from .models import Distancia
-from .serializers import DistanciaSerializer
 from django.shortcuts import render, HttpResponse
 import django.contrib.sites.requests
 from rest_framework.compat import requests
-
-class DistanciaViewSet(viewsets.ModelViewSet):
-    queryset = Distancia.objects.all().order_by('-created')
-    serializer_class = DistanciaSerializer
 
 def distancia(request):
     # Verifica si hay un parámetro value en la petición GET
