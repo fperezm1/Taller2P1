@@ -15,11 +15,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Distancia',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('type', models.CharField(max_length=20, verbose_name='Tipo')),
-                ('value', models.IntegerField(verbose_name='Valor')),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('updated', models.DateTimeField(auto_now=True)),
+                ('codigo', models.IntegerField(verbose_name='Codigo', primary_key=True,)),
+                ('longitud', models.FloatField(verbose_name='Longitud')),
+                ('latitud', models.FloatField(verbose_name='Latitud')),
+                ('terreno', models.CharField(verbose_name='Terreno', max_length=20)),
+                ('area', models.PositiveIntegerField(verbose_name='Area')),
             ],
         ),
     ]
