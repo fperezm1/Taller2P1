@@ -2,12 +2,17 @@
 {% block content %}
 <div class="container">
     <form method="get">
+        <br>
+        Codigo: 
         <input type="number" name="codigo" placeholder="Codigo">
         <br><br>
+        Latitud: 
         <input type="number" step="any" name="latitud" placeholder="Latitud">
         <br><br>
+        Longitud:
         <input type="number" step="any" name="longitud" placeholder="Longitud">
         <br><br>
+        Terreno: 
         <select name = "terreno" id="terreno" min="1">
             <option disabled selected value> Selecciona una opcion </option>
             <option value = "Planicie"> Planicie </option>
@@ -16,15 +21,26 @@
             <option value = "Desertico"> Desertico </option>
         </select>
         <br><br>
+        Area: 
         <input type="number" step="any" name="area" placeholder="Area" min="0">
         <br><br>
         <button type="submit"> Adicionar </button>
     </form>
-    <!-- {% for distancia in distancias %}
+    {% for distancia in distancias %}
+    <br>
+    <form>
+        <header> Predio </header>
+    </form>
     <ul class="list-group">
-        <li class="list-group-item">{{distancia.type}} = {{distancia.value}}</li>
+        <li class="list-group-item">
+            Codigo: {{distancia.codigo}} - 
+            Latitud: {{distancia.latitud}} - 
+            Longitud: {{distancia.longitud}} - 
+            Terreno: {{distancia.terreno}} - 
+            Area: {{distancia.area}}
+        </li>
     </ul>
-    {% endfor %} -->
+    {% endfor %}
 </div>
 {% endblock %}
 
