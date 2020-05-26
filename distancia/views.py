@@ -15,12 +15,12 @@ def distancia(request):
         if codigo and longitud and latitud and terreno and area:
             # Crea el json para realizar la petición POST al Web Service
             args = {'codigo': codigo, 'longitud': longitud, 'latitud': latitud, 'terreno': terreno, 'area': area}
-            response = requests.post('http://127.0.0.1:8000/distancias/', args)
+            response = requests.post('http://pi1-eafit-fperezm1.azurewebsites.net/distancias/', args)
             # Convierte la respuesta en JSON
             measure_json = response.json()
 
     # Realiza una petición GET al Web Services
-    response = requests.get('http://127.0.0.1:8000/distancias/')
+    response = requests.get('http://pi1-eafit-fperezm1.azurewebsites.net/distancias/')
     # Convierte la respuesta en JSON
     distancia = response.json()
     # Rederiza la respuesta en el template measure
